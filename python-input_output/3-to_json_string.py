@@ -1,17 +1,13 @@
 #!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 3. Write to a file """
+import json
 
-
-def write_file(filename="", text=""):
-    """Writes a string to a text file (UTF8) and returns the number
-of characters written. Overwrites existing content.
+def to_json_string(my_obj):
+    """Returns the JSON representation of an object (string).
 
     Args:
-        filename (str): name of file to be opened
-        text (str): chars to be written
+        my_obj: The object to serialize.
 
+    Returns:
+        str: The JSON representation of the object.
     """
-    # with w flag existing file automatically replaced
-    with open(filename, 'w', encoding='utf-8') as file:
-        chars_written = file.write(text)
-        return chars_written
+    return json.dumps(my_obj)
