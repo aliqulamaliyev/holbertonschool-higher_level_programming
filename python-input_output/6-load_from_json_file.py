@@ -1,14 +1,19 @@
 #!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 6. From JSON string to Object  """
+"""
+Function that creates a Python object from a JSON file
+"""
+
+import json
 
 
-def from_json_string(my_str):
-    """Returns an object (Python data structure) represented by a JSON string.
+def load_from_json_file(filename):
+    """Loads a Python object from a JSON file.
 
     Args:
-        my_obj (any): object to be serialized
+        filename (str): Name of the JSON file.
 
+    Returns:
+        object: Python object represented in the file.
     """
-    import json
-
-    return json.loads(my_str)
+    with open(filename, "r", encoding="utf-8") as f:
+        return json.load(f)
