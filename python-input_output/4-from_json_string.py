@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 4. Append to a file """
+"""
+Function that returns the Python object represented by a JSON string
+"""
+
+import json
 
 
-def append_write(filename="", text=""):
-    """Appends a string at the end of a text file (UTF8) and returns the
-number of characters added.
+def from_json_string(my_str):
+    """Converts a JSON string to a Python object.
 
     Args:
-        filename (str): name of file to be opened
-        text (str): chars to be written
+        my_str (str): JSON string representation.
 
+    Returns:
+        object: Python object represented by the JSON string.
     """
-    with open(filename, 'a', encoding='utf-8') as file:
-        chars_written = file.write(text)
-        return chars_written
+    return json.loads(my_str)

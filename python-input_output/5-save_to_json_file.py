@@ -1,14 +1,17 @@
 #!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 5. To JSON string """
+"""
+Function that writes a Python object to a text file using JSON representation
+"""
+
+import json
 
 
-def to_json_string(my_obj):
-    """Returns the JSON representation of an object (serialized string)
+def save_to_json_file(my_obj, filename):
+    """Writes a Python object to a file in JSON format.
 
     Args:
-        my_obj (any): object to be serialized
-
+        my_obj: Python object to serialize.
+        filename (str): Name of the file.
     """
-    import json
-
-    return json.dumps(my_obj)
+    with open(filename, "w", encoding="utf-8") as f:
+        json.dump(my_obj, f)
